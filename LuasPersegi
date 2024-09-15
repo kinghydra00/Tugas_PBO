@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class Persegi {
+    private int sisi;
+
+    public Persegi(int sisi) {
+        this.sisi = sisi;
+    }
+
+    public int hitungLuas() {
+        return sisi * sisi;
+    }
+
+    public int getSisi() {
+        return sisi;
+    }
+
+    public void setSisi(int sisi) {
+        this.sisi = sisi;
+    }
+}
+
+public class LuasPersegi {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukkan panjang sisi persegi: ");
+        int sisi = scan.nextInt();
+        Persegi persegi = new Persegi(sisi);
+        int luas = persegi.hitungLuas();
+        System.out.println("Luas Persegi adalah " + luas);
+        scan.close();
+    }
+}
