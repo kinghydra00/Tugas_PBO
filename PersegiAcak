@@ -1,0 +1,35 @@
+class Square {
+    private double sideLength;
+    
+    public Square(double sideLength) {
+        this.sideLength = sideLength;
+    }
+    
+    public double getArea() {
+        return sideLength * sideLength;
+    }
+    
+    public double getSideLength() {
+        return sideLength;
+    }
+    
+    public void setSideLength(double sideLength) {
+        this.sideLength = sideLength;
+    }
+}
+
+public class PersegiAcak {
+    public static void main(String[] args) {
+        
+        Square[] squares = new Square[10];
+        double totalArea = 0;
+        for (int i = 0; i < 10; i++) {
+            double randomSideLength = 1.0 + (Math.random() * 9.0);
+            squares[i] = new Square(randomSideLength);
+            totalArea += squares[i].getArea();
+            System.out.println("Square " + (i + 1) + " - Side length: " + randomSideLength + ", Area: " + squares[i].getArea());
+        }
+        
+        System.out.println("Total area of all squares: " + totalArea);
+    }
+}
